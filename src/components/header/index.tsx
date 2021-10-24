@@ -1,27 +1,26 @@
 import React from "react";
 import {
-  Container,
   Logo,
-  HeaderLeft,
-  Input,
-  HeaderInput,
   HeaderCenter,
-  HeaderRight,
-  HeaderInfo,
   stylesIcon,
   stylesTab,
   stylesTabs,
+  styleContainer,
+  styleHeaderLeft,
+  styleHeaderRight,
+  styleHeaderInfo,
+  CustomIconButton,
 } from "./styles";
-import SearchIcon from "@mui/icons-material/Search";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import SupervisedUserCircleOutlinedIcon from "@mui/icons-material/SupervisedUserCircleOutlined";
-import AddIcon from "@mui/icons-material/Add";
-import ForumIcon from "@mui/icons-material/Forum";
+import AppsIcon from "@mui/icons-material/Apps";
+import ChatIcon from "@mui/icons-material/Chat";
+import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Avatar, IconButton, Tabs, Tab } from "@mui/material";
+import { Avatar, Tabs, Tab, Box, useTheme } from "@mui/material";
+import { CustomInput } from "components";
 
 const Header = () => {
   const [value, setValue] = React.useState(0);
@@ -29,18 +28,23 @@ const Header = () => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const theme = useTheme();
+
+  const { palette }: any = theme;
+  const {
+    primary: { grey, lightGrey },
+    mode,
+  }: any = palette;
+
   return (
-    <Container>
-      <HeaderLeft>
+    <Box sx={styleContainer}>
+      <Box sx={styleHeaderLeft}>
         <Logo
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
           alt=""
         />
-        <HeaderInput>
-          <SearchIcon />
-          <Input placeholder="Search Facebook" type="text" />
-        </HeaderInput>
-      </HeaderLeft>
+        <CustomInput placeholder="Buscar en Fakebook" icon={true} />
+      </Box>
       <HeaderCenter>
         <Tabs sx={stylesTabs} value={value} onChange={handleChange}>
           <Tab
@@ -65,25 +69,28 @@ const Header = () => {
           />
         </Tabs>
       </HeaderCenter>
-      <HeaderRight className="header__right">
-        <HeaderInfo>
-          <Avatar />
-          <h4>Abraham Vidal</h4>
-        </HeaderInfo>
-        <IconButton>
-          <AddIcon />
-        </IconButton>
-        <IconButton>
-          <ForumIcon />
-        </IconButton>
-        <IconButton>
+      <Box sx={styleHeaderRight}>
+        <Box sx={styleHeaderInfo}>
+          <Avatar
+            sx={{ width: 28, height: 28 }}
+            src="https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c"
+          />
+          <h5>Abraham Vidal</h5>
+        </Box>
+        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+          <AppsIcon />
+        </CustomIconButton>
+        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+          <ChatIcon />
+        </CustomIconButton>
+        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
           <NotificationsActiveIcon />
-        </IconButton>
-        <IconButton>
-          <ExpandMoreIcon />
-        </IconButton>
-      </HeaderRight>
-    </Container>
+        </CustomIconButton>
+        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+          <ArrowDropDownRoundedIcon />
+        </CustomIconButton>
+      </Box>
+    </Box>
   );
 };
 

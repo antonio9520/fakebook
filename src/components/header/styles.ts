@@ -1,6 +1,19 @@
 import styled from "styled-components";
-// import theme from "theme";
+import { styled as styledMui } from "@mui/material/styles";
+import { IconButton } from "@mui/material";
 
+export const CustomIconButton = styledMui(IconButton)<{
+  mode: string;
+  lightGrey: string;
+  grey: string;
+}>(({ mode, lightGrey, grey }) => ({
+  color: mode === "light" ? "#000" : lightGrey,
+  backgroundColor: grey,
+  marginLeft: 8,
+  "&:hover": {
+    backgroundColor: mode === "light" ? "#D8DADF" : "",
+  },
+}));
 
 export const stylesIcon = {
   width: 28,
@@ -17,69 +30,72 @@ export const stylesTabs = {
   },
 };
 
+export const styleContainer: any = {
+  display: "flex",
+  padding: "0 20px",
+  justifyContent: "space-between",
+  position: "sticky",
+  bgcolor: "background.default",
+  color: "text.primary",
+  top: 0,
+  boxShadow: "0px 5px 8px -9px rgba(0, 0, 0, 0.75)",
+  zIndex: 99,
+  height: "56px",
+};
+
 export const stylesTab = {
   width: 110,
-  marginTop: 1,
+  marginTop: 0.5,
   marginLeft: 1,
   marginRight: 1,
   marginBottom: 0.5,
   borderRadius: 2,
+  height: 45,
   "&:hover": {
-    backgroundColor: "#F2F2F2",
-  },
-  "& .Mui-selected": {
-    backgroundColor: "red",
+    backgroundColor: "primary.grey",
   },
 };
 
-export const Container = styled.div`
-  display: flex;
-  padding: 0 20px;
-  justify-content: space-between;
-  position: sticky;
-  background-color: white;
-  top: 0;
-  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
-  z-index: 99;
-`;
+export const styleHeaderLeft = {
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  flex: 1,
+};
 
-export const HeaderLeft = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-`;
 
 export const Logo = styled.img`
   height: 40px;
 `;
 
-export const HeaderInput = styled.div`
-  display: flex;
-  align-items: center;
-  background-color: #eff2f5;
-  padding: 10px;
-  margin-left: 10px;
-  border-radius: 33px;
-`;
-export const Input = styled.input`
-  border: none;
-  background-color: transparent;
-  outline-width: 0;
-`;
 
+
+export const styleHeaderInfo = {
+  display: "flex",
+  alignItems: "center",
+  padding: "5px 5px",
+  borderRadius: 20,
+  "& > h5": {
+    padding: "0 5px",
+  },
+  "&:hover": {
+    backgroundColor: "primary.grey",
+    cursor: "pointer",
+  },
+};
+
+export const styleIconButton: any = {
+  width: 40,
+};
 export const HeaderCenter = styled.div`
   display: flex;
   justify-content: center;
-  flex: 1;
+  flex: 2;
 `;
 
-export const HeaderRight = styled.div`
-  display: flex;
-`;
-
-export const HeaderInfo = styled.div`
-  display: flex;
-  align-items: center;
-  & > h4 {
-    margin-left: 10px;
-  }
-`;
+export const styleHeaderRight = {
+  display: "flex",
+  alignItems: "center",
+  flex: 1,
+  justifyContent: "flex-end",
+};

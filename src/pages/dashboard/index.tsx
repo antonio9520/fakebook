@@ -1,10 +1,17 @@
-import React from "react";
+import * as React from "react";
+import { Box } from "@mui/material";
+import { Feed, RightColumn, Sidebar } from "./components";
+import { styleContainer, Container } from "./styles";
 
 const Dashboard = () => {
   return (
-    <div>
-      <h1>dashboard</h1>
-    </div>
+    <Box sx={styleContainer}>
+      <Container>
+        <Sidebar />
+        <Feed />
+        <RightColumn />
+      </Container>
+    </Box>
   );
 };
 
