@@ -1,5 +1,12 @@
 import * as React from "react";
-import { Box, ListItemButton, ListItemIcon, Icon, Avatar } from "@mui/material";
+import {
+  Box,
+  ListItemButton,
+  ListItemIcon,
+  Icon,
+  Avatar,
+  Button,
+} from "@mui/material";
 import {
   styleListItem,
   styleContainer,
@@ -7,10 +14,29 @@ import {
   UserName,
   Bottom,
   ContainerLinks,
+  styleQuickAccess,
+  styleHeaderQuickAccess,
+  ImageQuickAccess,
 } from "./styles";
 import { List, ListItem, Divider, Link } from "@mui/material";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
-import { itemsSidebar, Items } from "../constants";
+import { itemsSidebar, Items, dataLinks, LinksProps } from "../constants";
+
+const ItemProfile = () => {
+  return (
+    <ListItem sx={styleListItem}>
+      <ListItemButton sx={{ height: 56 }}>
+        <Avatar
+          sx={{
+            marginLeft: "-10px",
+          }}
+          src="https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c"
+        />
+        <UserName>Abraham Vidal</UserName>
+      </ListItemButton>
+    </ListItem>
+  );
+};
 
 const ItemsSidebar = ({ items }: { items: Items }) => {
   const [itemsList, setItemsList] = React.useState<Items>(items);
@@ -39,7 +65,11 @@ const ItemsSidebar = ({ items }: { items: Items }) => {
       {itemsList.map(({ icon, title }, index) => (
         <ListItem key={index} sx={styleListItem}>
           <ListItemButton sx={{ height: 56 }}>
-            <ListItemIcon sx={{ position: "relative" }}>
+            <ListItemIcon
+              sx={{
+                marginLeft: "-10px",
+              }}
+            >
               <Icon fontSize="large">{icon}</Icon>
             </ListItemIcon>
             <h5>{title}</h5>
@@ -48,7 +78,11 @@ const ItemsSidebar = ({ items }: { items: Items }) => {
       ))}
       <ListItem sx={styleListItem}>
         <ListItemButton sx={{ height: 56 }} onClick={openList}>
-          <ListItemIcon sx={{ position: "relative" }}>
+          <ListItemIcon
+            sx={{
+              marginLeft: "-10px",
+            }}
+          >
             <Icon
               fontSize="large"
               sx={{ backgroundColor: "primary.grey", borderRadius: 15 }}
@@ -66,48 +100,44 @@ const ItemsSidebar = ({ items }: { items: Items }) => {
   );
 };
 
-const ItemProfile = () => {
-  return (
-    <ListItem sx={styleListItem}>
-      <ListItemButton sx={{ height: 56 }}>
-        <Avatar src="https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c" />
-        <UserName>Abraham Vidal</UserName>
-      </ListItemButton>
-    </ListItem>
-  );
-};
-
-const Links = () => {
+const Links = ({ links }: { links: LinksProps }) => {
   return (
     <ContainerLinks>
-      <Link href="#" color="inherit" underline="hover">
-        Privacidad
-      </Link>
-      <span> · </span>
-      <Link href="#" color="inherit" underline="hover">
-        Condiciones
-      </Link>
-      <span> · </span>
-      <Link href="#" color="inherit" underline="hover">
-        Publicidad
-      </Link>
-      <span> · </span>
-      <Link href="#" color="inherit" underline="hover">
-        Opciones de anuncios
-      </Link>
-      <span> · </span>
-      <Link href="#" color="inherit" underline="hover">
-        Cookies
-      </Link>
-      <span> · </span>
-      <Link href="#" color="inherit" underline="hover">
-        Más
-      </Link>
-      <span> · Fakebook &copy; 2021</span>
+      {links.map((item, index) => (
+        <>
+          <Link key={index} href={item.url} color="inherit" underline="hover">
+            {item.title}
+          </Link>
+          <span> · </span>
+        </>
+      ))}
+      <span>Fakebook &copy; 2021</span>
     </ContainerLinks>
   );
 };
 
+const QuickAccessItem = () => (
+  <Box sx={styleQuickAccess}>
+    <Box sx={styleHeaderQuickAccess}>
+      <h5>Tus accesos directos</h5>
+      <Button variant="text" size="small">
+        Editar
+      </Button>
+    </Box>
+    <List sx={{ padding: 0 }}>
+      <ListItem sx={styleListItem}>
+        <ListItemButton sx={{ height: 56 }}>
+          <ImageQuickAccess
+            src={
+              "https://www.latercera.com/resizer/ygGPmHgKPAmwdMBA2k8jb5FRVEU=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/UZUEBRPGT5HKXIBAPD2LPDDYRA.jpeg"
+            }
+          />
+          <h5>Venta Instrumentos Musicales Bio Bio</h5>
+        </ListItemButton>
+      </ListItem>
+    </List>
+  </Box>
+);
 const Sidebar = () => {
   return (
     <Box sx={styleContainer}>
@@ -118,8 +148,8 @@ const Sidebar = () => {
         </List>
         <Divider variant="middle" />
         <Bottom>
-          <h4>bottom</h4>
-          <Links />
+          <QuickAccessItem />
+          <Links links={dataLinks} />
         </Bottom>
       </CustomScroll>
     </Box>

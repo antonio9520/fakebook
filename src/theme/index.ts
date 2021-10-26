@@ -31,6 +31,14 @@ export const getDesignTokens = (mode: PaletteMode) => ({
             primary: "#E4E6EB",
             secondary: grey[500],
           }),
+      button: {
+        textTransform: "none",
+      },
+    },
+    typography: {
+      button: {
+        textTransform: "none",
+      },
     },
   },
 });

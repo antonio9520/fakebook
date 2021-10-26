@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const styleContainer: any = {
   display: "flex",
-  marginTop: "30px",
+  marginTop: "15px",
   flexDirection: "column",
   backgroundColor: "background.default",
-  borderRadius: "15px",
+  borderRadius: "8px",
   boxShadow: "0px 5px 7px -7px rgba(0, 0, 0, 0.75)",
   width: "100%",
   color: "text.primary",

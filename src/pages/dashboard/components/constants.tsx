@@ -100,3 +100,19 @@ interface item {
   icon: SvgIconProps;
   title: string;
 }
+
+export const dataLinks: LinksProps = [
+  { title: "Privacidad", url: "#" },
+  { title: "Condiciones", url: "#" },
+  { title: "Publicidad", url: "#" },
+  { title: "Opciones de anuncios", url: "#" },
+  { title: "Cookies", url: "#" },
+  { title: "Más", url: "#" },
+];
+
+export interface LinksProps extends Array<link> {}
+
+interface link {
+  title: string;
+  url: string;
+}

@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 15.9%;
   height: 200px;
   box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: 0.2s ease-in;
   cursor: pointer;
   overflow: hidden;
@@ -51,7 +51,7 @@ export const ContainerAddStory = styled.div`
   width: 15.9%;
   height: 200px;
   box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: 0.2s ease-in;
   cursor: pointer;
   overflow: hidden;

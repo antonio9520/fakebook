@@ -34,6 +34,7 @@ export const styleContainer: any = {
 export const styleListItem: any = {
   "&:hover.MuiListItem-root": {
     background: "background.paper",
+    paddingLeft: 0,
   },
   padding: 0,
   margin: 1,
@@ -45,6 +46,7 @@ export const styleListItem: any = {
     marginLeft: "-10px",
     fontSize: "15px",
   },
+  
 };
 
 export const UserName = styled.h4`
@@ -57,9 +59,42 @@ export const Bottom = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
 `;
 
 export const ContainerLinks = styled.div`
-  font-size: 13px;
+  font-size: 14px;
+  margin: 10px;
+  margin-left: 10px;
+`;
+
+export const styleQuickAccess = {
+  // backgroundColor: "red",
+  // paddingLeft: "20px",
+};
+
+export const styleHeaderQuickAccess = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  height: "50px",
+  paddingLeft: "16px",
+  "& > h5": {
+    fontSize: 18,
+    color: "#696C70",
+  },
+  "& .MuiButton-root": {
+    display: "none",
+    fontSize: "14px",
+  },
+  "&:hover .MuiButton-root": {
+    display: "inherit",
+  },
+};
+
+export const ImageQuickAccess = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 25px;
+  margin-left: -10px;
 `;
