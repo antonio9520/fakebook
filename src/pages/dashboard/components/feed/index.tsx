@@ -3,9 +3,11 @@ import {
   Container,
   ContainerStoryReel,
   styleContainerVideoChat,
+  styleChipVideoChat,
+  styleAvatarVideoChat,
 } from "./styles";
-import { Box, Avatar, Chip } from "@mui/material";
-import { Story, CardAddStory, MessageSender } from "components";
+import { Box, Avatar, Button } from "@mui/material";
+import { Story, CardAddStory, MessageSender, Post } from "components";
 import { dataStories } from "assets/constant";
 import { VideoCall } from "@mui/icons-material";
 
@@ -28,15 +30,18 @@ const StoryReel = () => {
 const VideoChat = () => {
   return (
     <Box sx={styleContainerVideoChat}>
-      <Chip icon={<VideoCall sx={{ color: "#894AA8" }} />} label="Crear sala" />
-      <Avatar />
-      <Avatar />
-      <Avatar />
-      <Avatar />
-      <Avatar />
-      <Avatar />
-      <Avatar />
-      <Avatar />
+      <Button
+        sx={styleChipVideoChat}
+        startIcon={
+          <VideoCall sx={{ color: "#A34DB2", width: "28px", height: "28px" }} />
+        }
+        variant="text"
+      >
+        Crear sala
+      </Button>
+      {dataStories.map((item, index) => (
+        <Avatar key={index} sx={styleAvatarVideoChat} src={item.profileURL} />
+      ))}
     </Box>
   );
 };
@@ -46,6 +51,7 @@ const Feed = () => {
       <StoryReel />
       <MessageSender />
       <VideoChat />
+      <Post />
     </Container>
   );
 };

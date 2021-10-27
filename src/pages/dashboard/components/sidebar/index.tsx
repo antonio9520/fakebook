@@ -21,6 +21,7 @@ import {
 import { List, ListItem, Divider, Link } from "@mui/material";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import { itemsSidebar, Items, dataLinks, LinksProps } from "../constants";
+import { useResizeArray } from "hooks";
 
 const ItemProfile = () => {
   return (
@@ -40,24 +41,22 @@ const ItemProfile = () => {
 
 const ItemsSidebar = ({ items }: { items: Items }) => {
   const [itemsList, setItemsList] = React.useState<Items>(items);
+  const [numMaxListItems, setNumMaxListItems] = React.useState(9);
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const textSeeMore = isOpen ? "Ver menos" : "Ver más";
+  const itemsSidebar = useResizeArray(items, 0, numMaxListItems);
 
   React.useEffect(() => {
-    if (!isOpen) {
-      const _items: Items = [];
-      for (let i = 0; i < 9; i++) {
-        _items.push(items[i]);
-      }
-      setItemsList(_items);
-    } else {
-      setItemsList(items);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen]);
+    setItemsList(itemsSidebar);
+  }, [itemsSidebar]);
 
   const openList = () => {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      setNumMaxListItems(items.length);
+    } else {
+      setNumMaxListItems(9);
+    }
   };
 
   return (
