@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import {
   styleContainer,
   ContainerBottom,
-  Option,
+  styleOption,
   ContainerTop,
   ContainerInput,
 } from "./style";
-import { Avatar, Box } from "@mui/material";
+import { Avatar, Box, Button } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
@@ -43,28 +43,38 @@ const MessageSender = () => {
             <CustomInput placeholder={`¿Que estás pensando, Abraham Vidal?`} />
           </form>
         </ContainerInput>
-        {/* <input
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            placeholder="Image URL (Optional)"
-          /> */}
-        {/* <button onClick={handleSubmit} type="submit">
-            Hidden submit
-          </button> */}
       </ContainerTop>
       <ContainerBottom>
-        <Option>
-          <VideocamIcon style={{ color: "#E73F5A" }} />
-          <h4>Video en vivo</h4>
-        </Option>
-        <Option>
-          <PhotoLibraryIcon style={{ color: "#41B35D" }} />
-          <h4>Foto/video</h4>
-        </Option>
-        <Option>
-          <InsertEmoticonIcon style={{ color: "#EAB026" }} />
-          <h4>Sentimiento/Actividad</h4>
-        </Option>
+        <Button
+          sx={styleOption}
+          startIcon={
+            <VideocamIcon
+              sx={{ color: "#E73F5A", width: "30px", height: "30px" }}
+            />
+          }
+        >
+          Video en vivo
+        </Button>
+        <Button
+          sx={styleOption}
+          startIcon={
+            <PhotoLibraryIcon
+              sx={{ color: "#41B35D", width: "30px", height: "30px" }}
+            />
+          }
+        >
+          Foto/video
+        </Button>
+        <Button
+          sx={styleOption}
+          startIcon={
+            <InsertEmoticonIcon
+              sx={{ color: "#EAB026", width: "30px", height: "30px" }}
+            />
+          }
+        >
+          Sentimiento/Actividad
+        </Button>
       </ContainerBottom>
     </Box>
   );

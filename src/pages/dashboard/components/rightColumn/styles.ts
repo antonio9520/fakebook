@@ -48,6 +48,7 @@ export const styleContainerCard = {
   padding: "10px 15px",
   borderRadius: "8px",
   boxShadow: "0px 5px 7px -7px rgba(0, 0, 0, 0.75)",
+  color: "text.primary",
 };
 
 export const styleHeaderCardGroup = {

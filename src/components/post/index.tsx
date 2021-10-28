@@ -1,6 +1,22 @@
 import React from "react";
-import { Box, Avatar, Typography, IconButton } from "@mui/material";
-import { Public, MoreHoriz } from "@mui/icons-material";
+import {
+  Box,
+  Avatar,
+  Typography,
+  IconButton,
+  Link,
+  Divider,
+  Button,
+} from "@mui/material";
+import {
+  Public,
+  MoreHoriz,
+  ThumbUp,
+  ChatBubbleOutlineOutlined,
+  ThumbUpOutlined,
+  ShareOutlined,
+} from "@mui/icons-material";
+
 import {
   styleContainer,
   styleHeader,
@@ -10,6 +26,11 @@ import {
   styleDescription,
   styleMultimedia,
   ImagenPost,
+  styleReactionInfo,
+  styleReactionInfoLeft,
+  styleReactionInfoRight,
+  styleActionBar,
+  styleDivider,
 } from "./styles";
 
 const Post = () => {
@@ -37,17 +58,6 @@ const Post = () => {
     );
   };
 
-  const Multimedia = () => {
-    return (
-      <Box sx={styleMultimedia}>
-        <ImagenPost
-          src={
-            "https://www.wallpapertip.com/wmimgs/186-1861067_beautiful-sky-mobile-phone-wallpaper-makes-people-want.jpg"
-          }
-        />
-      </Box>
-    );
-  };
   const Description = () => {
     return (
       <Box sx={styleDescription}>
@@ -64,15 +74,60 @@ const Post = () => {
       </Box>
     );
   };
+
+  const Multimedia = () => {
+    return (
+      <Box sx={styleMultimedia}>
+        <ImagenPost
+          src={
+            "https://www.wallpapertip.com/wmimgs/186-1861067_beautiful-sky-mobile-phone-wallpaper-makes-people-want.jpg"
+          }
+        />
+      </Box>
+    );
+  };
+
+  const ReactionsInfo = () => {
+    return (
+      <Box sx={styleReactionInfo}>
+        <Box sx={styleReactionInfoLeft}>
+          <ThumbUp color="primary" fontSize="small" />
+          <Typography>543</Typography>
+        </Box>
+        <Box sx={styleReactionInfoRight}>
+          <Link
+            href="#"
+            color="inherit"
+            underline="hover"
+            sx={{ marginRight: 1 }}
+          >
+            203 comentarios
+          </Link>
+          <Link href="#" color="inherit" underline="hover">
+            201 veces compartido
+          </Link>
+        </Box>
+      </Box>
+    );
+  };
+
+  const ActionBar = () => {
+    return (
+      <Box sx={styleActionBar}>
+        <Button startIcon={<ThumbUpOutlined />}>Me gusta</Button>
+        <Button startIcon={<ChatBubbleOutlineOutlined />}>Comentar</Button>
+        <Button startIcon={<ShareOutlined />}>Compartir</Button>
+      </Box>
+    );
+  };
   return (
     <Box sx={styleContainer}>
       <Header />
       <Description />
       <Multimedia />
-      {/**post info */}
-      {/**actionBar */}
-
-      <h1>post</h1>
+      <ReactionsInfo />
+      <Divider sx={styleDivider} />
+      <ActionBar />
     </Box>
   );
 };

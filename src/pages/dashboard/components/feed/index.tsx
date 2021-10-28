@@ -52,6 +52,10 @@ const Feed = () => {
       <MessageSender />
       <VideoChat />
       <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
     </Container>
   );
 };
