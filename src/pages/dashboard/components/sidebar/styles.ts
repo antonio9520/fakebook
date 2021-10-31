@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const CustomScroll = styled.div`
-  &:hover {
-    overflow-y: auto;
-    overflow-x: hidden;
+  &:hover::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
   }
   &::-webkit-scrollbar {
     width: 8px;
@@ -13,7 +12,7 @@ export const CustomScroll = styled.div`
     border-radius: 10px;
   }
   &::-webkit-scrollbar-thumb {
-    background: #bcc0c4;
+    background: transparent;
     border-radius: 10px;
   }
 
@@ -21,6 +20,8 @@ export const CustomScroll = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 export const styleContainer: any = {
@@ -46,7 +47,6 @@ export const styleListItem: any = {
     marginLeft: "-10px",
     fontSize: "15px",
   },
-  
 };
 
 export const UserName = styled.h4`
@@ -67,10 +67,7 @@ export const ContainerLinks = styled.div`
   margin-left: 10px;
 `;
 
-export const styleQuickAccess = {
-  // backgroundColor: "red",
-  // paddingLeft: "20px",
-};
+export const styleQuickAccess = {};
 
 export const styleHeaderQuickAccess = {
   display: "flex",
@@ -98,3 +95,8 @@ export const ImageQuickAccess = styled.img`
   margin-right: 25px;
   margin-left: -10px;
 `;
+
+export const styleListItemButton = {
+  height: 56,
+  paddingLeft: 0,
+};

@@ -1,19 +1,4 @@
 import styled from "styled-components";
-import { styled as styledMui } from "@mui/material/styles";
-import { IconButton } from "@mui/material";
-
-export const CustomIconButton = styledMui(IconButton)<{
-  mode: string;
-  lightGrey: string;
-  grey: string;
-}>(({ mode, lightGrey, grey }) => ({
-  color: mode === "light" ? "#000" : lightGrey,
-  backgroundColor: grey,
-  marginLeft: 8,
-  "&:hover": {
-    backgroundColor: mode === "light" ? "#D8DADF" : "",
-  },
-}));
 
 export const stylesIcon = {
   width: 28,
@@ -63,12 +48,9 @@ export const styleHeaderLeft = {
   flex: 1,
 };
 
-
 export const Logo = styled.img`
   height: 40px;
 `;
-
-
 
 export const styleHeaderInfo = {
   display: "flex",
@@ -85,13 +67,17 @@ export const styleHeaderInfo = {
 };
 
 export const styleIconButton: any = {
-  width: 40,
+  backgroundColor: "primary.grey",
+  marginLeft: 2,
+  "&:hover": {
+    backgroundColor: "background.paper",
+  },
 };
-export const HeaderCenter = styled.div`
-  display: flex;
-  justify-content: center;
-  flex: 2;
-`;
+export const styleHeaderCenter = {
+  display: "flex",
+  justifyContent: "center",
+  flex: 2,
+};
 
 export const styleHeaderRight = {
   display: "flex",

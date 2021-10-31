@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Logo,
-  HeaderCenter,
+  styleHeaderCenter,
   stylesIcon,
   stylesTab,
   stylesTabs,
@@ -9,7 +9,7 @@ import {
   styleHeaderLeft,
   styleHeaderRight,
   styleHeaderInfo,
-  CustomIconButton,
+  styleIconButton,
 } from "./styles";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
@@ -19,7 +19,7 @@ import AppsIcon from "@mui/icons-material/Apps";
 import ChatIcon from "@mui/icons-material/Chat";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import { Avatar, Tabs, Tab, Box, useTheme } from "@mui/material";
+import { Avatar, Tabs, Tab, Box, useTheme, IconButton } from "@mui/material";
 import { CustomInput } from "components";
 
 const Header = () => {
@@ -31,10 +31,7 @@ const Header = () => {
   const theme = useTheme();
 
   const { palette }: any = theme;
-  const {
-    primary: { grey, lightGrey },
-    mode,
-  }: any = palette;
+  const { mode, lightGrey }: any = palette;
 
   return (
     <Box sx={styleContainer}>
@@ -45,7 +42,7 @@ const Header = () => {
         />
         <CustomInput placeholder="Buscar en Fakebook" icon={true} />
       </Box>
-      <HeaderCenter>
+      <Box sx={styleHeaderCenter}>
         <Tabs sx={stylesTabs} value={value} onChange={handleChange}>
           <Tab
             sx={stylesTab}
@@ -68,7 +65,7 @@ const Header = () => {
             aria-label="favorite"
           />
         </Tabs>
-      </HeaderCenter>
+      </Box>
       <Box sx={styleHeaderRight}>
         <Box sx={styleHeaderInfo}>
           <Avatar
@@ -77,18 +74,38 @@ const Header = () => {
           />
           <h5>Abraham Vidal</h5>
         </Box>
-        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+        <IconButton
+          sx={{
+            ...styleIconButton,
+            color: mode === "light" ? "#000" : lightGrey,
+          }}
+        >
           <AppsIcon />
-        </CustomIconButton>
-        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+        </IconButton>
+        <IconButton
+          sx={{
+            ...styleIconButton,
+            color: mode === "light" ? "#000" : lightGrey,
+          }}
+        >
           <ChatIcon />
-        </CustomIconButton>
-        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+        </IconButton>
+        <IconButton
+          sx={{
+            ...styleIconButton,
+            color: mode === "light" ? "#000" : lightGrey,
+          }}
+        >
           <NotificationsActiveIcon />
-        </CustomIconButton>
-        <CustomIconButton mode={mode} lightGrey={lightGrey} grey={grey}>
+        </IconButton>
+        <IconButton
+          sx={{
+            ...styleIconButton,
+            color: mode === "light" ? "#000" : lightGrey,
+          }}
+        >
           <ArrowDropDownRoundedIcon />
-        </CustomIconButton>
+        </IconButton>
       </Box>
     </Box>
   );

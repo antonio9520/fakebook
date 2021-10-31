@@ -52,21 +52,34 @@ export const ContainerAddStory = styled.div`
   height: 200px;
   box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
   border-radius: 8px;
-  transition: 0.2s ease-in;
   cursor: pointer;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  &:hover::after {
+    content: "";
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &:hover .img-add-story {
+    background-size: 125%;
+    transition: 0.5s;
+  }
 `;
 
 export const ContainerImage = styled.div`
   position: relative;
   flex: 1;
+  background-size: 105%;
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
-  &:hover {
-    background-size: 102% 102%;
-  }
+  transition: 0.5s;
 `;
 
 export const styleBottomCard: any = {
@@ -93,12 +106,3 @@ export const styleContainerIcon: any = {
   left: "33%",
   backgroundColor: "background.default",
 };
-export const OverlayAddStory = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-`;

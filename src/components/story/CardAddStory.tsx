@@ -2,7 +2,6 @@ import * as React from "react";
 import {
   ContainerImage,
   ContainerAddStory,
-  OverlayAddStory,
   styleBottomCard,
   styleContainerIcon,
 } from "./style";
@@ -13,6 +12,7 @@ const CardAddStory = () => {
   return (
     <ContainerAddStory>
       <ContainerImage
+        className="img-add-story"
         style={{
           backgroundImage: `url(https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s288-p-rw-no)`,
         }}
@@ -30,7 +30,6 @@ const CardAddStory = () => {
 
         <h5>Crea una historia</h5>
       </Box>
-      <OverlayAddStory />
     </ContainerAddStory>
   );
 };

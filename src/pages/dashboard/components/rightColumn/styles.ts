@@ -5,16 +5,11 @@ export const Container = styled.div`
   width: 20%;
   max-width: 380px;
   right: 0;
-  max-height: 100%;
-  &:hover {
-    overflow-y: auto;
-  }
 `;
 
 export const CustomScroll = styled.div`
-  &:hover {
-    overflow-y: auto;
-    overflow-x: hidden;
+  &:hover::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
   }
   &::-webkit-scrollbar {
     width: 8px;
@@ -24,7 +19,7 @@ export const CustomScroll = styled.div`
     border-radius: 10px;
   }
   &::-webkit-scrollbar-thumb {
-    background: #bcc0c4;
+    background: transparent;
     border-radius: 10px;
   }
 
@@ -33,6 +28,9 @@ export const CustomScroll = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  padding-right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 export const ImagenCardGroup = styled.img`
@@ -49,6 +47,7 @@ export const styleContainerCard = {
   borderRadius: "8px",
   boxShadow: "0px 5px 7px -7px rgba(0, 0, 0, 0.75)",
   color: "text.primary",
+  marginRight: 1,
 };
 
 export const styleHeaderCardGroup = {
@@ -92,3 +91,84 @@ export const IconButtonCloseCardGroup = styled.div`
   top: 5px;
   right: 5px;
 `;
+
+
+export const styleHeaderContacts = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+};
+
+export const styleButtonsHeaderContacts = {
+  width: "120px",
+  display: "flex",
+  justifyContent: "space-between",
+};
+
+export const styleDivider = {
+  marginTop: 2,
+  marginBottom: 2,
+};
+
+export const styleTypoListItem = {
+  marginLeft: 2,
+  color: "primary.lightGrey",
+};
+
+
+export const styleItemButton = {
+  borderRadius: 2,
+  marginTop: 0.5,
+  marginBottom: 0.5,
+  paddingLeft: 1,
+};
+
+export const styleAvatar = {
+  width: "35px",
+  height: "35px",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor: "primary.grey",
+    opacity: 0.5,
+  },
+};
+
+export const styleTypoTitleContact = {
+  fontWeight: 600,
+  color: "primary.lightGrey",
+};
+
+export const styleContainerButtonNewMessage: any = {
+  position: "absolute",
+  bottom: "15px",
+  right: "15px",
+};
+
+export const styleButtonNewMessage = {
+  backgroundColor: "background.default",
+  boxShadow: "0px 5px 7px -7px rgba(0,0,0,0.75)",
+};
+
+export const styleIconAddGroup = {
+  color: "#000",
+};
+
+export const styleContainerIconAdd = {
+  width: "35px",
+  height: "35px",
+  backgroundColor: "lightgrey",
+  borderRadius: 15,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
+export const styleTypoAddGroup = {
+  marginLeft: 2,
+  color: "text.primary",
+};

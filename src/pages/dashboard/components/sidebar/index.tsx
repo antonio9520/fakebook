@@ -6,6 +6,10 @@ import {
   Icon,
   Avatar,
   Button,
+  List,
+  ListItem,
+  Divider,
+  Link,
 } from "@mui/material";
 import {
   styleListItem,
@@ -17,8 +21,8 @@ import {
   styleQuickAccess,
   styleHeaderQuickAccess,
   ImageQuickAccess,
+  styleListItemButton,
 } from "./styles";
-import { List, ListItem, Divider, Link } from "@mui/material";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import { itemsSidebar, Items, dataLinks, LinksProps } from "../constants";
 import { useResizeArray } from "hooks";
@@ -26,13 +30,8 @@ import { useResizeArray } from "hooks";
 const ItemProfile = () => {
   return (
     <ListItem sx={styleListItem}>
-      <ListItemButton sx={{ height: 56 }}>
-        <Avatar
-          sx={{
-            marginLeft: "-10px",
-          }}
-          src="https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c"
-        />
+      <ListItemButton sx={styleListItemButton}>
+        <Avatar src="https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c" />
         <UserName>Abraham Vidal</UserName>
       </ListItemButton>
     </ListItem>
@@ -40,35 +39,22 @@ const ItemProfile = () => {
 };
 
 const ItemsSidebar = ({ items }: { items: Items }) => {
-  const [itemsList, setItemsList] = React.useState<Items>(items);
-  const [numMaxListItems, setNumMaxListItems] = React.useState(9);
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const textSeeMore = isOpen ? "Ver menos" : "Ver más";
+  const numMaxListItems = isOpen ? items.length : 9;
   const itemsSidebar = useResizeArray(items, 0, numMaxListItems);
-
-  React.useEffect(() => {
-    setItemsList(itemsSidebar);
-  }, [itemsSidebar]);
+  const itemsList: Items = itemsSidebar;
 
   const openList = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      setNumMaxListItems(items.length);
-    } else {
-      setNumMaxListItems(9);
-    }
   };
 
   return (
     <>
-      {itemsList.map(({ icon, title }, index) => (
-        <ListItem key={index} sx={styleListItem}>
-          <ListItemButton sx={{ height: 56 }}>
-            <ListItemIcon
-              sx={{
-                marginLeft: "-10px",
-              }}
-            >
+      {itemsList.map(({ id, icon, title }) => (
+        <ListItem key={id} sx={styleListItem}>
+          <ListItemButton sx={styleListItemButton}>
+            <ListItemIcon>
               <Icon fontSize="large">{icon}</Icon>
             </ListItemIcon>
             <h5>{title}</h5>
@@ -76,12 +62,8 @@ const ItemsSidebar = ({ items }: { items: Items }) => {
         </ListItem>
       ))}
       <ListItem sx={styleListItem}>
-        <ListItemButton sx={{ height: 56 }} onClick={openList}>
-          <ListItemIcon
-            sx={{
-              marginLeft: "-10px",
-            }}
-          >
+        <ListItemButton sx={styleListItemButton} onClick={openList}>
+          <ListItemIcon>
             <Icon
               fontSize="large"
               sx={{ backgroundColor: "primary.grey", borderRadius: 15 }}
@@ -102,13 +84,13 @@ const ItemsSidebar = ({ items }: { items: Items }) => {
 const Links = ({ links }: { links: LinksProps }) => {
   return (
     <ContainerLinks>
-      {links.map((item, index) => (
-        <>
-          <Link key={index} href={item.url} color="inherit" underline="hover">
-            {item.title}
+      {links.map(({ id, url, title }) => (
+        <React.Fragment key={id}>
+          <Link href={url} color="inherit" underline="hover">
+            {title}
           </Link>
           <span> · </span>
-        </>
+        </React.Fragment>
       ))}
       <span>Fakebook &copy; 2021</span>
     </ContainerLinks>

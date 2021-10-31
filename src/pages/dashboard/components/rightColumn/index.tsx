@@ -1,5 +1,14 @@
 import * as React from "react";
-import { Box, Button, IconButton } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Typography,
+  Divider,
+  List,
+  ListItemButton,
+  Avatar,
+} from "@mui/material";
 import {
   Container,
   CustomScroll,
@@ -9,10 +18,31 @@ import {
   styleContainerDescription,
   styleButtonCardGroup,
   IconButtonCloseCardGroup,
+  styleHeaderContacts,
+  styleButtonsHeaderContacts,
+  styleDivider,
+  styleTypoListItem,
+  styleItemButton,
+  styleAvatar,
+  styleTypoTitleContact,
+  styleContainerButtonNewMessage,
+  styleButtonNewMessage,
+  styleIconAddGroup,
+  styleContainerIconAdd,
+  styleTypoAddGroup,
 } from "./styles";
-import { Group, Close } from "@mui/icons-material";
+import {
+  Group,
+  Close,
+  VideoCall,
+  Search,
+  MoreHoriz,
+  Edit,
+  Add,
+} from "@mui/icons-material";
+import { itemsContacts } from "../constants";
 
-const CardGroup = () => {
+const CardGroup: React.FC = () => {
   return (
     <Box sx={styleContainerCard} position="relative">
       <Box sx={styleHeaderCardGroup}>
@@ -41,11 +71,73 @@ const CardGroup = () => {
   );
 };
 
+const Contacts = () => {
+  return (
+    <Box>
+      <Box sx={styleHeaderContacts}>
+        <Typography sx={styleTypoTitleContact}>Contactos</Typography>
+        <Box sx={styleButtonsHeaderContacts}>
+          <IconButton size="small">
+            <VideoCall fontSize="small" />
+          </IconButton>
+          <IconButton size="small">
+            <Search fontSize="small" />
+          </IconButton>
+          <IconButton size="small">
+            <MoreHoriz fontSize="small" />
+          </IconButton>
+        </Box>
+      </Box>
+      <List>
+        {itemsContacts.map((item) => (
+          <ListItemButton key={item.id} sx={styleItemButton}>
+            <Avatar sx={styleAvatar} src={item.profileURL} />
+            <Typography fontSize={"15px"} sx={styleTypoListItem}>
+              {item.name}
+            </Typography>
+          </ListItemButton>
+        ))}
+      </List>
+    </Box>
+  );
+};
+
+const GroupConversations = () => {
+  return (
+    <Box>
+      <Typography sx={styleTypoTitleContact}>
+        Conversaciones en grupo
+      </Typography>
+      <List>
+        <ListItemButton sx={styleItemButton}>
+          <Box sx={styleContainerIconAdd}>
+            <Add fontSize="medium" sx={styleIconAddGroup} />
+          </Box>
+          <Typography fontSize={"15px"} sx={styleTypoAddGroup}>
+            Crear nuevo grupo
+          </Typography>
+        </ListItemButton>
+      </List>
+    </Box>
+  );
+};
+
 const RightColumn = () => {
   return (
     <Container>
       <CustomScroll>
         <CardGroup />
+        <Divider sx={styleDivider} />
+        <Typography sx={styleTypoTitleContact}>Publicidad</Typography>
+        <Divider sx={styleDivider} />
+        <Contacts />
+        <Divider sx={styleDivider} />
+        <GroupConversations />
+        <Box sx={styleContainerButtonNewMessage}>
+          <IconButton size="large" sx={styleButtonNewMessage}>
+            <Edit />
+          </IconButton>
+        </Box>
       </CustomScroll>
     </Container>
   );

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from // , { useState }
+"react";
 import {
   styleContainer,
   ContainerBottom,
@@ -16,23 +17,23 @@ import { CustomInput } from "components";
 
 const MessageSender = () => {
   //   const [{ user }] = useStateValue();
-  const [input, setInput] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  // const [input, setInput] = useState("");
+  // const [imageUrl, setImageUrl] = useState("");
 
-  const handleSubmit = async (e: any) => {
-    // e.preventDefault();
-    // const collectionRef = collection(db, "posts");
-    // const payload = {
-    //   message: input,
-    //   timestamp: serverTimestamp(),
-    //   profilePic: user.photoURL,
-    //   username: user.displayName,
-    //   image: imageUrl,
-    // };
-    // await addDoc(collectionRef, payload).catch((error) => alert(error.message));
-    // setInput("");
-    // setImageUrl("");
-  };
+  // const handleSubmit = async (e: any) => {
+  // e.preventDefault();
+  // const collectionRef = collection(db, "posts");
+  // const payload = {
+  //   message: input,
+  //   timestamp: serverTimestamp(),
+  //   profilePic: user.photoURL,
+  //   username: user.displayName,
+  //   image: imageUrl,
+  // };
+  // await addDoc(collectionRef, payload).catch((error) => alert(error.message));
+  // setInput("");
+  // setImageUrl("");
+  // };
   return (
     <Box sx={styleContainer}>
       <ContainerTop>
