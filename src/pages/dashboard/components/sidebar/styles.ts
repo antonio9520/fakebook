@@ -1,3 +1,4 @@
+import { SxProps } from "@mui/system";
 import styled from "styled-components";
 
 export const CustomScroll = styled.div`
@@ -24,15 +25,18 @@ export const CustomScroll = styled.div`
   overflow-x: hidden;
 `;
 
-export const styleContainer: any = {
+export const styleContainer: SxProps = {
   position: "fixed",
-  width: "20%",
-  maxHeight: "100%",
+  // width: "100%",
+  // maxWidth: "350px",
   paddingBottom: "60px",
   color: "text.primary",
+  width: { lg: "24%" },
+  maxWidth: { lg: "350px" },
+  // backgroundColor: { xs: "gray", sm: "yellow", md: "blue", lg: "pink" },
 };
 
-export const styleListItem: any = {
+export const styleListItem: SxProps = {
   "&:hover.MuiListItem-root": {
     background: "background.paper",
     paddingLeft: 0,
@@ -67,9 +71,9 @@ export const ContainerLinks = styled.div`
   margin-left: 10px;
 `;
 
-export const styleQuickAccess = {};
+export const styleQuickAccess: SxProps = {};
 
-export const styleHeaderQuickAccess = {
+export const styleHeaderQuickAccess: SxProps = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -96,7 +100,7 @@ export const ImageQuickAccess = styled.img`
   margin-left: -10px;
 `;
 
-export const styleListItemButton = {
+export const styleListItemButton: SxProps = {
   height: 56,
   paddingLeft: 0,
 };

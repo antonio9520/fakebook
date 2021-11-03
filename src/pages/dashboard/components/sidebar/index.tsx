@@ -121,18 +121,26 @@ const QuickAccessItem = () => (
 );
 const Sidebar = () => {
   return (
-    <Box sx={styleContainer}>
-      <CustomScroll>
-        <List sx={{ overflow: "visible" }}>
-          <ItemProfile />
-          <ItemsSidebar items={itemsSidebar} />
-        </List>
-        <Divider variant="middle" />
-        <Bottom>
-          <QuickAccessItem />
-          <Links links={dataLinks} />
-        </Bottom>
-      </CustomScroll>
+    <Box
+      sx={{
+        flex: 1,
+        position: "relative",
+        display: { xs: "none", sm: "none", md: "none", lg: "block" },
+      }}
+    >
+      <Box sx={styleContainer}>
+        <CustomScroll>
+          <List sx={{ overflow: "visible" }}>
+            <ItemProfile />
+            <ItemsSidebar items={itemsSidebar} />
+          </List>
+          <Divider variant="middle" />
+          <Bottom>
+            <QuickAccessItem />
+            <Links links={dataLinks} />
+          </Bottom>
+        </CustomScroll>
+      </Box>
     </Box>
   );
 };

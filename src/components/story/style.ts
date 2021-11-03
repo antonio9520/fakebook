@@ -1,30 +1,31 @@
+import { SxProps } from "@mui/system";
 import styled from "styled-components";
 
-export const Container = styled.div`
-  position: relative;
-  background-position: center center;
-  background-size: 105%;
-  background-repeat: no-repeat;
-  width: 15.9%;
-  height: 200px;
-  box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
-  border-radius: 8px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
-  overflow: hidden;
-  &:hover {
-    background-size: 107%;
-  }
-  & > h5 {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    max-width: 50px;
-  }
-`;
+export const styleContainer: SxProps = {
+  position: "relative",
+  backgroundPosition: "center center",
+  backgroundSize: "105%",
+  backgroundRepeat: "no-repeat",
+  width: { xs: "24%", sm: "19%", md: "19%", lg: "19%", xl: "15%" },
+  height: "100%",
+  boxShadow: "0px 5px 17px -7px rgba(0, 0, 0, 0.75)",
+  borderRadius: "8px",
+  transition: "0.2s ease-in",
+  cursor: "pointer",
+  overflow: "hidden",
+  "&:hover": {
+    backgroundSize: "107%",
+  },
+  "& > h5": {
+    position: "absolute",
+    bottom: "10px",
+    left: "10px",
+    color: "white",
+    maxWidth: "50px",
+  },
+};
 
-export const styleAvatar: any = {
+export const styleAvatar: SxProps = {
   position: "absolute",
   border: "3px solid #2e81f4",
   top: 10,
@@ -46,44 +47,38 @@ export const Overlay = styled.div`
 `;
 
 //Card add story
-export const ContainerAddStory = styled.div`
-  position: relative;
-  width: 15.9%;
-  height: 200px;
-  box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
-  border-radius: 8px;
-  cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  &:hover::after {
-    content: "";
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  &:hover .img-add-story {
-    background-size: 125%;
-    transition: 0.5s;
-  }
-`;
+export const styleContainerAddStory: SxProps = {
+  position: "relative",
+  width: { xs: "24%", sm: "19%", md: "19%", lg: "19%", xl: "15%" },
+  height: "100%",
+  boxShadow: "0px 5px 17px -7px rgba(0, 0, 0, 0.75)",
+  borderRadius: "8px",
+  cursor: "pointer",
+  overflow: "hidden",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-end",
+  backgroundSize: "105%",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "top center",
+  transition: "0.2s ease-in",
+  "&:hover::after": {
+    content: '""',
+    opacity: 1,
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
+  },
+  "&:hover ": {
+    backgroundSize: "107%",
+  },
+};
 
-export const ContainerImage = styled.div`
-  position: relative;
-  flex: 1;
-  background-size: 105%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  transition: 0.5s;
-`;
-
-export const styleBottomCard: any = {
-  flex: 0.5,
+export const styleBottomCard: SxProps = {
+  flex: 0.4,
   position: "relative",
   display: "flex",
   justifyContent: "center",
@@ -97,7 +92,7 @@ export const styleBottomCard: any = {
   },
 };
 
-export const styleContainerIcon: any = {
+export const styleContainerIcon: SxProps = {
   position: "absolute",
   display: "inline-block",
   padding: "4px",

@@ -1,11 +1,12 @@
+import { SxProps } from "@mui/system";
 import styled from "styled-components";
 
-export const Container = styled.div`
-  position: fixed;
-  width: 20%;
-  max-width: 380px;
-  right: 0;
-`;
+export const styleContainer: SxProps = {
+  position: "fixed",
+  width: { md: "34%", lg: "23%" },
+  maxWidth: { md: "350px", lg: "350px" },
+  right: 0,
+};
 
 export const CustomScroll = styled.div`
   &:hover::-webkit-scrollbar-thumb {
@@ -41,7 +42,7 @@ export const ImagenCardGroup = styled.img`
   border-radius: 8px;
 `;
 
-export const styleContainerCard = {
+export const styleContainerCard: SxProps = {
   bgcolor: "background.default",
   padding: "10px 15px",
   borderRadius: "8px",
@@ -50,7 +51,7 @@ export const styleContainerCard = {
   marginRight: 1,
 };
 
-export const styleHeaderCardGroup = {
+export const styleHeaderCardGroup: SxProps = {
   display: "flex",
   height: "30px",
   alignItems: "center",
@@ -64,7 +65,7 @@ export const styleHeaderCardGroup = {
   },
 };
 
-export const styleContainerDescription = {
+export const styleContainerDescription: SxProps = {
   "& > h4": {
     fontWeight: 600,
   },
@@ -74,7 +75,7 @@ export const styleContainerDescription = {
   },
 };
 
-export const styleButtonCardGroup = {
+export const styleButtonCardGroup: SxProps = {
   backgroundColor: "background.paper",
   marginTop: "15px",
   color: "text.primary",
@@ -92,38 +93,36 @@ export const IconButtonCloseCardGroup = styled.div`
   right: 5px;
 `;
 
-
-export const styleHeaderContacts = {
+export const styleHeaderContacts: SxProps = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
 };
 
-export const styleButtonsHeaderContacts = {
+export const styleButtonsHeaderContacts: SxProps = {
   width: "120px",
   display: "flex",
   justifyContent: "space-between",
 };
 
-export const styleDivider = {
+export const styleDivider: SxProps = {
   marginTop: 2,
   marginBottom: 2,
 };
 
-export const styleTypoListItem = {
+export const styleTypoListItem: SxProps = {
   marginLeft: 2,
   color: "primary.lightGrey",
 };
 
-
-export const styleItemButton = {
+export const styleItemButton: SxProps = {
   borderRadius: 2,
   marginTop: 0.5,
   marginBottom: 0.5,
   paddingLeft: 1,
 };
 
-export const styleAvatar = {
+export const styleAvatar: SxProps = {
   width: "35px",
   height: "35px",
   "&::after": {
@@ -138,27 +137,27 @@ export const styleAvatar = {
   },
 };
 
-export const styleTypoTitleContact = {
+export const styleTypoTitleContact: SxProps = {
   fontWeight: 600,
   color: "primary.lightGrey",
 };
 
-export const styleContainerButtonNewMessage: any = {
+export const styleContainerButtonNewMessage: SxProps = {
   position: "absolute",
   bottom: "15px",
   right: "15px",
 };
 
-export const styleButtonNewMessage = {
+export const styleButtonNewMessage: SxProps = {
   backgroundColor: "background.default",
   boxShadow: "0px 5px 7px -7px rgba(0,0,0,0.75)",
 };
 
-export const styleIconAddGroup = {
+export const styleIconAddGroup: SxProps = {
   color: "#000",
 };
 
-export const styleContainerIconAdd = {
+export const styleContainerIconAdd: SxProps = {
   width: "35px",
   height: "35px",
   backgroundColor: "lightgrey",
@@ -168,7 +167,7 @@ export const styleContainerIconAdd = {
   alignItems: "center",
 };
 
-export const styleTypoAddGroup = {
+export const styleTypoAddGroup: SxProps = {
   marginLeft: 2,
   color: "text.primary",
 };

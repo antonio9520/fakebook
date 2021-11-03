@@ -1,4 +1,4 @@
-export default function  useResizeArray(
+export default function useResizeArray(
   array?: Array<any>,
   minNumber?: number,
   maxNumber?: number

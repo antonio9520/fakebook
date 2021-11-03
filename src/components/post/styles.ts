@@ -1,6 +1,7 @@
+import { SxProps } from "@mui/system";
 import styled from "styled-components";
 
-export const styleContainer = {
+export const styleContainer: SxProps = {
   backgroundColor: "background.default",
   marginTop: 2,
   borderRadius: "8px",
@@ -8,49 +9,54 @@ export const styleContainer = {
   color: "text.primary",
 };
 
-export const styleHeader = {
+export const styleHeader: SxProps = {
   display: "flex",
   padding: 2,
 };
 
-export const styleHeaderLeft = {
+export const styleHeaderLeft: SxProps = {
   flex: 1,
   display: "flex",
 };
 
-export const styleHeaderInfo = {
+export const styleHeaderInfo: SxProps = {
   color: "text.primary",
   marginLeft: 1.5,
 };
 
-export const styleHeaderDate = {
+export const styleHeaderDate: SxProps = {
   display: "flex",
   alignItems: "center",
   marginTop: "-5px",
 };
 
-export const styleDescription = {
+export const styleDescription: SxProps = {
   paddingLeft: 2,
   paddingRight: 2,
 };
 
 export const ImagenPost = styled.img`
-  width: "100%";
-  height: "100%";
+  object-fit: contain;
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
-export const styleMultimedia = {
+export const styleMultimedia: SxProps = {
   maxHeight: "650px",
   overflow: "hidden",
   display: "flex",
   justifyContent: "center",
   background: "#060607",
   marginTop: 2,
+  "& > img": {
+    width: {
+      xs: "100%",
+      sm: "inherit",
+    },
+  },
 };
 
-export const styleReactionInfo = {
+export const styleReactionInfo: SxProps = {
   padding: 2,
   paddingBottom: 1,
   paddingTop: 1,
@@ -58,7 +64,7 @@ export const styleReactionInfo = {
   color: "primary.lightGrey",
 };
 
-export const styleReactionInfoLeft = {
+export const styleReactionInfoLeft: SxProps = {
   flex: 1,
   display: "flex",
   alignItems: "center",
@@ -66,18 +72,18 @@ export const styleReactionInfoLeft = {
     marginLeft: 1,
   },
 };
-export const styleReactionInfoRight = {
+export const styleReactionInfoRight: SxProps = {
   flex: 1,
   display: "flex",
   justifyContent: "flex-end",
 };
 
-export const styleDivider = {
+export const styleDivider: SxProps = {
   marginLeft: 2,
   marginRight: 2,
 };
 
-export const styleActionBar = {
+export const styleActionBar: SxProps = {
   display: "flex",
   justifyContent: "space-between",
   paddingLeft: 2,
@@ -90,8 +96,7 @@ export const styleActionBar = {
     color: "text.primary",
   },
   "& .MuiButton-root": {
-    paddingLeft: 8,
-    paddingRight: 8,
+    width: "33%",
     "&: hover": {
       backgroundColor: "background.paper",
     },

@@ -1,23 +1,20 @@
 import * as React from "react";
 import {
-  ContainerImage,
-  ContainerAddStory,
+  styleContainerAddStory,
   styleBottomCard,
   styleContainerIcon,
 } from "./style";
 import { IconButton, Box } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
-const CardAddStory = () => {
+const CardAddStory: React.FC = () => {
   return (
-    <ContainerAddStory>
-      <ContainerImage
-        className="img-add-story"
-        style={{
-          backgroundImage: `url(https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s288-p-rw-no)`,
-        }}
-      />
-
+    <Box
+      sx={{
+        ...styleContainerAddStory,
+        backgroundImage: `url(https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s288-p-rw-no)`,
+      }}
+    >
       <Box sx={styleBottomCard}>
         <Box sx={styleContainerIcon}>
           <IconButton
@@ -27,10 +24,9 @@ const CardAddStory = () => {
             <AddIcon />
           </IconButton>
         </Box>
-
         <h5>Crea una historia</h5>
       </Box>
-    </ContainerAddStory>
+    </Box>
   );
 };
 

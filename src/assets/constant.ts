@@ -28,9 +28,9 @@ export const dataStories = [
   },
   {
     imageURL:
-      "https://w0.peakpx.com/wallpaper/772/564/HD-wallpaper-never-give-up-body-bodybuilding-bodybuilding-fitness-gethealthy-gym-healthylife-motivation-workout.jpg",
-    username: "Abraham Vidal",
+      "https://image.winudf.com/v2/image1/Y29tLm1vYmlsZXVuaXZlcnNpdHkuZm9vZF9zY3JlZW5fMl8xNTQyNzE2MzUyXzA0OQ/screen-2.jpg?fakeurl=1&type=.jpg",
+    username: "Jaime Linares",
     profileURL:
-      "https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c",
+      "https://lh3.googleusercontent.com/a-/AOh14GhS2lY23dprx6TjwsxS9CuVDLmULPF7hPGU9cXoZqc=s96-c",
   },
 ];

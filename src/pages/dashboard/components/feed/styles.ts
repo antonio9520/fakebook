@@ -1,23 +1,31 @@
+import { SxProps } from "@mui/system";
 import styled from "styled-components";
 
+export const styleContainer: SxProps = {
+  flex: 2,
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+};
+
 export const Container = styled.div`
-  width: 50%;
-  right: 0;
-  margin-left: 25%;
-  padding-left: 7%;
-  padding-right: 7%;
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 2%;
   padding-top: 10px;
   padding-bottom: 200px;
-  min-width: 970px;
+  max-width: 740px;
 `;
 
-export const ContainerStoryReel = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-`;
+export const styleContainerStoryReel: SxProps = {
+  display: "flex",
+  justifyContent: "space-between",
+  height: { xs: "40vw", sm: "33vw", md: "21vw", lg: "16vw", xl: "12vw" },
+  maxHeight: "200px",
+  padding: "10px 0",
+};
 
-export const styleContainerVideoChat = {
+export const styleContainerVideoChat: SxProps = {
   height: "70px",
   width: "100%",
   backgroundColor: "background.default",
@@ -29,7 +37,7 @@ export const styleContainerVideoChat = {
   padding: "0 15px",
 };
 
-export const styleChipVideoChat = {
+export const styleChipVideoChat: SxProps = {
   borderRadius: "50px",
   border: "2px solid #DBE7F2",
   padding: "5px 15px",
@@ -41,6 +49,6 @@ export const styleChipVideoChat = {
   },
 };
 
-export const styleAvatarVideoChat = {
+export const styleAvatarVideoChat: SxProps = {
   marginLeft: "15px",
 };

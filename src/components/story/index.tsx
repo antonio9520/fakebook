@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Container, styleAvatar, Overlay } from "./style";
-import { Avatar } from "@mui/material";
+import { styleContainer, styleAvatar, Overlay } from "./style";
+import { Avatar, Box } from "@mui/material";
 
 const Story = ({
   imageURL,
@@ -12,15 +12,11 @@ const Story = ({
   username: string;
 }) => {
   return (
-    <Container
-      style={{
-        backgroundImage: `url(${imageURL})`,
-      }}
-    >
+    <Box sx={{ ...styleContainer, backgroundImage: `url(${imageURL})` }}>
       <Overlay />
       <Avatar sx={styleAvatar} src={profileURL} />
       <h5>{username}</h5>
-    </Container>
+    </Box>
   );
 };
 

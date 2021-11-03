@@ -1,6 +1,7 @@
+import { SxProps } from "@mui/system";
 import styled from "styled-components";
 
-export const styleContainer: any = {
+export const styleContainer: SxProps = {
   display: "flex",
   marginTop: 2,
   flexDirection: "column",
@@ -12,6 +13,7 @@ export const styleContainer: any = {
   padding: 2,
   paddingBottom: 1,
   paddingTop: 1.5,
+  overflow: "hidden",
 };
 
 export const ContainerBottom = styled.div`
@@ -19,7 +21,7 @@ export const ContainerBottom = styled.div`
   justify-content: space-between;
 `;
 
-export const styleOption = {
+export const styleOption: SxProps = {
   display: "flex",
   alignItems: "center",
   color: "primary.lightGrey",

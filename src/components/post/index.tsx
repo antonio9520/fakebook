@@ -16,7 +16,6 @@ import {
   ThumbUpOutlined,
   ShareOutlined,
 } from "@mui/icons-material";
-
 import {
   styleContainer,
   styleHeader,
@@ -33,8 +32,8 @@ import {
   styleDivider,
 } from "./styles";
 
-const Post = () => {
-  const Header = () => {
+const Post: React.FC = () => {
+  const Header: React.FC = () => {
     return (
       <Box sx={styleHeader}>
         <Box sx={styleHeaderLeft}>
@@ -43,7 +42,7 @@ const Post = () => {
             <Typography fontSize={15} fontWeight={600}>
               Daddy Yankee
             </Typography>
-            <Box style={styleHeaderDate}>
+            <Box sx={styleHeaderDate}>
               <Typography fontSize={13}>25 de octubre a las 20:12 ·</Typography>
               <Public sx={{ width: "15px", marginLeft: "2px" }} />
             </Box>
@@ -58,7 +57,7 @@ const Post = () => {
     );
   };
 
-  const Description = () => {
+  const Description: React.FC = () => {
     return (
       <Box sx={styleDescription}>
         <Typography lineHeight={1.3} fontSize={15}>
@@ -75,7 +74,7 @@ const Post = () => {
     );
   };
 
-  const Multimedia = () => {
+  const Multimedia: React.FC = () => {
     return (
       <Box sx={styleMultimedia}>
         <ImagenPost
@@ -87,7 +86,7 @@ const Post = () => {
     );
   };
 
-  const ReactionsInfo = () => {
+  const ReactionsInfo: React.FC = () => {
     return (
       <Box sx={styleReactionInfo}>
         <Box sx={styleReactionInfoLeft}>
@@ -111,7 +110,7 @@ const Post = () => {
     );
   };
 
-  const ActionBar = () => {
+  const ActionBar: React.FC = () => {
     return (
       <Box sx={styleActionBar}>
         <Button startIcon={<ThumbUpOutlined />}>Me gusta</Button>
@@ -127,6 +126,7 @@ const Post = () => {
       <Multimedia />
       <ReactionsInfo />
       <Divider sx={styleDivider} />
+
       <ActionBar />
     </Box>
   );

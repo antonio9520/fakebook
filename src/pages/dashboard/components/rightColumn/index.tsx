@@ -10,7 +10,7 @@ import {
   Avatar,
 } from "@mui/material";
 import {
-  Container,
+  styleContainer,
   CustomScroll,
   ImagenCardGroup,
   styleContainerCard,
@@ -124,22 +124,30 @@ const GroupConversations = () => {
 
 const RightColumn = () => {
   return (
-    <Container>
-      <CustomScroll>
-        <CardGroup />
-        <Divider sx={styleDivider} />
-        <Typography sx={styleTypoTitleContact}>Publicidad</Typography>
-        <Divider sx={styleDivider} />
-        <Contacts />
-        <Divider sx={styleDivider} />
-        <GroupConversations />
-        <Box sx={styleContainerButtonNewMessage}>
-          <IconButton size="large" sx={styleButtonNewMessage}>
-            <Edit />
-          </IconButton>
-        </Box>
-      </CustomScroll>
-    </Container>
+    <Box
+      sx={{
+        flex: 1,
+        position: "relative",
+        display: { xs: "none", sm: "none", md: "block", lg: "block" },
+      }}
+    >
+      <Box sx={styleContainer}>
+        <CustomScroll>
+          <CardGroup />
+          <Divider sx={styleDivider} />
+          <Typography sx={styleTypoTitleContact}>Publicidad</Typography>
+          <Divider sx={styleDivider} />
+          <Contacts />
+          <Divider sx={styleDivider} />
+          <GroupConversations />
+          <Box sx={styleContainerButtonNewMessage}>
+            <IconButton size="large" sx={styleButtonNewMessage}>
+              <Edit />
+            </IconButton>
+          </Box>
+        </CustomScroll>
+      </Box>
+    </Box>
   );
 };
 

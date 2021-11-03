@@ -10,6 +10,7 @@ import {
   styleHeaderRight,
   styleHeaderInfo,
   styleIconButton,
+  styleContainerInput,
 } from "./styles";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
@@ -40,7 +41,9 @@ const Header = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
           alt=""
         />
-        <CustomInput placeholder="Buscar en Fakebook" icon={true} />
+        <Box sx={styleContainerInput}>
+          <CustomInput placeholder="Buscar en Fakebook" icon={true} />
+        </Box>
       </Box>
       <Box sx={styleHeaderCenter}>
         <Tabs sx={stylesTabs} value={value} onChange={handleChange}>
@@ -72,7 +75,7 @@ const Header = () => {
             sx={{ width: 28, height: 28 }}
             src="https://lh3.googleusercontent.com/a-/AOh14GjtAafcooDYxoFjSPf8BrwY16huXtqS4K3SpPiOyA=s96-c"
           />
-          <h5>Abraham Vidal</h5>
+          <h5>Abraham</h5>
         </Box>
         <IconButton
           sx={{
